@@ -1,10 +1,12 @@
 import string
 import time
 
+
 def read_file(file_name):
     text_file = open(file_name, "r")
     lines = text_file.read().split('\n')
     return lines
+
 
 def part_1_intersect(lines):
     intersect = []
@@ -14,6 +16,7 @@ def part_1_intersect(lines):
         intersect.append(list(f.intersection(s))[0])
         print()
     return intersect
+
 
 def part_2_intersect(lines):
     intersect = []
@@ -25,6 +28,7 @@ def part_2_intersect(lines):
         intersect.append(list(f.intersection(s).intersection(t))[0])
     return intersect
 
+
 def points(letter):
     upp = letter.isupper()
     l = letter.lower()
@@ -34,6 +38,7 @@ def points(letter):
     else:
         return ind
 
+
 start_time = time.time()
 lines = read_file('input_day3.txt')
 r = 0
@@ -42,7 +47,6 @@ for j in part_1_intersect(lines):
     r += points(j)
 print('1st part answer: '+ str(r))
 print("--- %s seconds for 1st part---" % (time.time() - start_time))
-
 
 start_time = time.time()
 r2 = 0

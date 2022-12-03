@@ -1,6 +1,7 @@
 import string
 import time
 
+
 def read_file(file_name):
     text_file = open(file_name, "r")
     lines = text_file.read().split('\n')
@@ -9,6 +10,7 @@ def read_file(file_name):
         i.split(' ')
         l.append([i[0], i[2]])
     return l
+
 
 def game_outcome(player_1, player_2, part):
     if part == 1:
@@ -24,6 +26,7 @@ def game_outcome(player_1, player_2, part):
     else:
         return [0,6]
 
+
 def points(figure):
     if figure in ['A', 'X']:
         return 1
@@ -31,6 +34,7 @@ def points(figure):
         return 2
     else:
         return 3
+
 
 def which_to_play(player_1, outcome):
     order = ['A', 'C', 'B']
@@ -44,6 +48,7 @@ def which_to_play(player_1, outcome):
     else:
         return forward
 
+
 start_time = time.time()
 lines = read_file('input_day2.txt')
 player_1_points = 0
@@ -56,7 +61,6 @@ for i in lines:
     player_2_points += g[1]+points(player_2)
 print('1st part answer: '+ str(player_2_points))
 print("--- %s seconds for 1st part---" % (time.time() - start_time))
-
 
 start_time = time.time()
 player_1_points = 0
